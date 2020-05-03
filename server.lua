@@ -393,11 +393,11 @@ end)
 local random = math.random(1, 100) 
 RegisterServerEvent("v_jobs:robberyOver")
 AddEventHandler("v_jobs:robberyOver", function(name)
-    if random > 5 then
-        if robbables[name].type == 2 then 
-        --TriggerClientEvent('fsn_inventory:itemAdd', modified_bit, source, robbables[type]) add the bit item here
-        end
-    end   	
+--     if random > 5 then
+--         if robbables[name].type == 2 then 
+--         --TriggerClientEvent('fsn_inventory:itemAdd', modified_bit, source, robbables[type]) add the bit item here
+--         end
+--     end   	
         TriggerClientEvent('fsn_bank:change:walletAdd', source, robbables[name].stockMoney)
         robbables[name].stockMoney = 0
 end)
