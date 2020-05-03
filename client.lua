@@ -445,17 +445,17 @@ AddEventHandler("v_jobs:StartRobbery", function()
         Citizen.CreateThread(function()
             while robbing do
                 if robbingObject.register then
-                    SetTextComponentFormat("STRING")
-                    AddTextComponentString("You're prying open the register! ("..robbingObject.robTime - seconds.." seconds left)")
-                    DisplayHelpTextFromStringLabel(0, 0, 1, -1)
+--                     SetTextComponentFormat("STRING")
+--                     AddTextComponentString("You're prying open the register! ("..robbingObject.robTime - seconds.." seconds left)")
+--                     DisplayHelpTextFromStringLabel(0, 0, 1, -1)
                     if not IsEntityPlayingAnim(GetPlayerPed(-1), "mini@safe_cracking", "dial_turn_clock_fast", 3) then
                         TaskPlayAnim(GetPlayerPed(-1), "mini@safe_cracking", 'dial_turn_clock_fast', 30.0, 30.0, 1.0, 1, 0.0, 0, 0, 0)
                     end
                     exports["vt_taskbar"]:barStartActive('lockpicking register',robbingObject.robTime)
                 else
-                    SetTextComponentFormat("STRING")
-                    AddTextComponentString("You're cracking into the safe! ("..robbingObject.robTime - seconds.." seconds left)")
-                    DisplayHelpTextFromStringLabel(0, 0, 1, -1)
+--                     SetTextComponentFormat("STRING")
+--                     AddTextComponentString("You're cracking into the safe! ("..robbingObject.robTime - seconds.." seconds left)")
+--                     DisplayHelpTextFromStringLabel(0, 0, 1, -1)
                     if not IsEntityPlayingAnim(GetPlayerPed(-1), "mini@safe_cracking", "dial_turn_clock_slow", 3) then
                         TaskPlayAnim(GetPlayerPed(-1), "mini@safe_cracking", 'dial_turn_clock_slow', 90.0, 90.0, 1.0, 1, 0.0, 0, 0, 0)
                     end
